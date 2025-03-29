@@ -1,0 +1,26 @@
+**Docker Desktop & Docker Engine are different and if both run at the same time it will create complications. See official Doc to learn more**
+
+Install Docker with DEB Packages(Will Show some error after installation - Ignore it):
+	sudo apt-get install ./docker-desktop-amd64.deb
+
+Check Version of Docker Desktop:
+	docker compose version
+	docker --version
+	docker version
+
+Enable Docker Desktop on signin:
+	systemctl--user enable docker-desktop
+
+Disable Docker Desktop on signin:
+	systemctl disable docker-desktop **or**
+	systemctl diable docker.service docker.socket
+
+Check Docker Desktop Status:
+	systemctl status docker-desktop
+
+Launch Docker Desktop using CLI:
+	systemctl --user start docker-desktop
+
+Stop Docker Desktop:
+	systemctl --user stop docker-desktop
+
