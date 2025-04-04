@@ -1,3 +1,5 @@
-1. sudo -s =========================================> access root profile
-2. su root =========================================> access root profile
-
+1. access root profile:
+	su root
+	sudo -s
+2. List all the apt installed list:
+	apt list --manual-installed

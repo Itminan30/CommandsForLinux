@@ -1,0 +1,7 @@
+On Ubuntu, Docker images, containers, volumes, and other data are stored within the /var/lib/docker directory. 
+Here's a more detailed breakdown:
+1. Root Directory: The /var/lib/docker directory is the central location for all Docker-related data. 
+2. Images: Docker images are stored within the /var/lib/docker/images directory. 
+3. Containers: Docker containers, including their logs, are stored in subdirectories under /var/lib/docker/containers/. Each container has its own directory named after its unique ID. 
+4. Volumes: Docker volumes, which are used for persistent storage, are stored in the /var/lib/docker/volumes directory. 
+5. Networks: Docker networks are stored in the /var/lib/docker/network directory 

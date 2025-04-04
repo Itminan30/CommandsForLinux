@@ -1,26 +1,59 @@
 **Docker Desktop & Docker Engine are different and if both run at the same time it will create complications. See official Doc to learn more**
 
-Install Docker with DEB Packages(Will Show some error after installation - Ignore it):
+1. Install Docker with DEB Packages(Will Show some error after installation - Ignore it):
 	sudo apt-get install ./docker-desktop-amd64.deb
 
-Check Version of Docker Desktop:
+2. Check Version of Docker Desktop:
 	docker compose version
 	docker --version
 	docker version
 
-Enable Docker Desktop on signin:
+3. Enable Docker Desktop on signin:
 	systemctl--user enable docker-desktop
 
-Disable Docker Desktop on signin:
+4. Disable Docker Desktop on signin:
 	systemctl disable docker-desktop **or**
 	systemctl diable docker.service docker.socket
 
-Check Docker Desktop Status:
+5. Check Docker Desktop Status:
 	systemctl status docker-desktop
 
-Launch Docker Desktop using CLI:
+6. Launch Docker Desktop using CLI:
 	systemctl --user start docker-desktop
 
-Stop Docker Desktop:
+7. Stop Docker Desktop:
 	systemctl --user stop docker-desktop
 
+8. See available Docker Images:
+	docker images
+
+9. Pull Docker Images:
+	docker pull image-name
+
+10. Run Docker Image (create container from docker image) (If the image is not availabe then this command pulls the image first then run it):
+	docker run image-name
+
+11. See all availabe containers:
+	docker ps -a
+	docker ps (see the running containers)
+
+12. Restart existing docker container:
+	docker start container-name or docker start container-id
+
+13. Stop a running Docker container:
+	docker stop container-name or docker stop container-id
+	
+13. Remove docker image:
+	docker rmi image-name
+
+14. Remove Docker Container:
+	docker rm container-name
+	
+15. Name a Container:
+	docker run --name container-name image-name
+
+16. Port Binding:
+	docker run -phost-port:container-port image-name
+
+17 Environment Variable:
+	docker run -e ENVIRONMENT_NAME=ENVIRONMENT_VALUE image-name
