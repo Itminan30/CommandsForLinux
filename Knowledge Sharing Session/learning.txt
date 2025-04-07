@@ -1,0 +1,9 @@
+April 6, 2025:
+	Teacher: Salman Vai
+	Topics:
+		1. Git (Skipped)
+		2. Memory Leak
+		3. Garbage Collection
+		4. Racing Condition
+		5. ACID Properties
+

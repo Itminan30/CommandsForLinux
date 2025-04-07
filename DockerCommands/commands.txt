@@ -57,3 +57,43 @@
 
 17 Environment Variable:
 	docker run -e ENVIRONMENT_NAME=ENVIRONMENT_VALUE image-name
+
+18. Check logs of a container:
+	docker logs container-id
+
+19. Access the terminal of a running container:
+	docker exec -it container-id /bin/bash
+	docker exec -it container-id /bin/sh (In case the container terminal doesn't have bash)
+
+20. Run Container in detached mode:
+	docker run -d image-name
+
+21. Check all the docker networks:
+	docker network ls
+
+22. Create a docker network:
+	docker network create network-name
+
+23. Delete a docker network:
+	docker network rm network-name
+
+23. Run an image in a docker network:
+	docker run -d \
+	-p<hostport>:<containerport> \ 
+	--name container_name \
+	--network network_name \
+	-e env_name=env_value
+	image_name
+
+24. Up a docker compose file:
+	docker compose -f fileName.yaml up -d
+
+25. Down (Delete the containers) a docker compose file:
+	docker compose -f fileName.yaml down
+
+26. Learn about dockerizing our application***
+
+27. Docker Volumes:
+	docker run -it -v host_path:cont_path image_name
+Here	host_path = Path of the host where we want to save the data
+	cont_path = Path of the imaginary file system of container where the data will be saved
