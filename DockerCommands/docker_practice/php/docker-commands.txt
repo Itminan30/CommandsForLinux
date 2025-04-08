@@ -1,0 +1,31 @@
+For the PHP and Apache Server:
+    docker run -d -p 80:80 -v /mnt/FDrive/CommandsForLinux/DockerCommands/docker_practice/php/:/var/www/html --name php-con php:apache
+    (This won't have pdo and mysqli extension installed, so for pdo "Connection failed could not find driver" message will be shown)
+    (For this a custom docker image has to be build from a Dockefile which will run the command to enable these extension.)
+    (For the custom image the php containers will have the required extensions enabled)
+    
+    docker run -d \
+    -p 80:80 \
+    -v /mnt/FDrive/CommandsForLinux/DockerCommands/docker_practice/php/:/var/www/html \
+    --name php-con \
+    php:apache_mysqli_pdo
+
+For MySQL:
+    docker run -d \
+    -v /mnt/FDrive/CommandsForLinux/DockerCommands/docker_practice/php/DB:/var/lib/mysql \
+    --name mysql-con \
+    -e MYSQL_ROOT_PASSWORD=qwerty \
+    mysql 
+
+Find the IP Address of the MYSQL Server:
+    docker inspect mysql-con | grep IP
+
+For PhpMyAdmin:
+    docker run -d \
+    --name phpmyadmin \
+    -e PMA_HOST="172.17.0.3" \
+    -p 8080:80 \
+    phpmyadmin
+
+For Building from Dockerfile:
+    docker build --tag php:apache_mysli_pdo .
